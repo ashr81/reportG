@@ -1,28 +1,19 @@
-== README
+Steps to Run the App:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+open command inside the app directory.
 
-Things you may want to cover:
+added <code>gem 'httparty', '~> 0.13.7'</code>
 
-* Ruby version
+run <code>bundle</code>
 
-* System dependencies
+added root to home page controller: <code>lat_long_addition</code> and action: <code>index</code>
 
-* Configuration
+start the server <code>rails s</code>
 
-* Database creation
+Type: ''http://localhost:3000/'' .Each row from <code>data.csv</code> is inserted in formatted way
+that is adding latitude and longitudes from api using HTTParty gem to <code>output.csv</code>. 
+Find <code>data.csv</code> and <code>output.csv</code> in <code>vendor</code> folder in <code>Main</code> directory
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Latitude and Longitude is added if the target type is <code>City</code>
+And preference is given to latitude and longitude with <code>fcode</code> equals to 'PPL' and 'GOVL'.Find the preference here(''http://www.geonames.org/export/codes.html'').
+if mulitple <code>latitudes</code> and <code>longitudes</code> are found <code>fcode</code> with above values are preferred over others.
